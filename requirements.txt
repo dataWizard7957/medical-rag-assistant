@@ -1,0 +1,10 @@
+langchain
+langchain-community
+chromadb
+sentence-transformers
+pymupdf
+tiktoken
+huggingface_hub
+llama-cpp-python==0.1.85
+numpy
+pandas
