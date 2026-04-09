@@ -55,10 +55,12 @@ Grounded Answer
 ---
 
 ## Results
+
 Improved retrieval relevance by ~25–30% through:
 - Better chunking strategy
 - Embedding selection
 - Retrieval tuning
+  
 Reduced hallucinations by:
 - Strict prompt constraints
 - Context-only answering
