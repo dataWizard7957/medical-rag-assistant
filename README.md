@@ -102,21 +102,22 @@ python medicalrag.py
 ---
 
 ## Design Decisions
-Chose RAG over fine-tuning for:
+- Chose RAG over fine-tuning for:
 - Better interpretability
 - Lower compute cost
 - Easier updates with new data
   
-Used local LLM (Mistral via llama.cpp) for:
+- Used local LLM (Mistral via llama.cpp) for:
 - Privacy
 - Cost efficiency
 
 ---
 
-## Limitations & Future Work
+## Limitations 
 - Limited to static documents 
-- No reranking model 
-Can be extended with:
+- No reranking model
+  
+## Future Work
 - Hybrid search (BM25 + embeddings)
 - Multi-document reasoning
 
