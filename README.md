@@ -26,15 +26,19 @@ The system follows a typical RAG workflow:
 ```text
 Medical Manual PDF
         ↓
-Document Chunking
+Document Ingestion (PyMuPDF)
         ↓
-Sentence Embeddings
+Chunking (Recursive Splitter + Overlap)
+        ↓
+Embeddings (Sentence Transformers - GTE-Large)
         ↓
 Vector Database (Chroma)
         ↓
-Semantic Retrieval
+Semantic Retrieval (Top-K Similarity)
         ↓
-Mistral-7B LLM
+Context Injection
+        ↓
+Mistral-7B LLM (via llama.cpp)
         ↓
 Grounded Answer
 ```
@@ -50,7 +54,7 @@ Grounded Answer
   
 ---
 
-## Improvements & Results
+## Results
 Improved retrieval relevance by ~25–30% through:
 - Better chunking strategy
 - Embedding selection
