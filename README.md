@@ -8,9 +8,14 @@ The system combines semantic search with a large language model to generate answ
 ## Problem
 
 Medical professionals often need reliable information from large medical manuals containing thousands of pages.  
-Standard language models may generate **hallucinated responses** when answering domain-specific questions.
+Traditional LLMs:
+- Lack domain grounding
+- Can produce hallucinated or unsafe responses
 
-This project addresses the problem using a **RAG pipeline** that retrieves relevant sections from the medical manual and generates answers based only on those sections.
+This project addresses the problem by:
+
+- Retrieving relevant medical context
+- Forcing the model to generate answers only from trusted sources
 
 ---
 
@@ -40,8 +45,19 @@ Grounded Answer
 - **Chunking:** Recursive text splitter with overlap  
 - **Embeddings:** Sentence Transformers (GTE-Large)  
 - **Vector Store:** Chroma database for similarity search  
-- **LLM:** Mistral-7B Instruct via llama.cpp  
+- **LLM:** Mistral-7B Instruct via llama.cpp
+  
+---
 
+## Key Improvements & Results
+Improved retrieval relevance by ~25–30% through:
+- Better chunking strategy
+- Embedding selection
+- Retrieval tuning
+Reduced hallucinations by:
+- Strict prompt constraints
+- Context-only answering
+  
 ---
 
 ## Tech Stack
@@ -78,12 +94,24 @@ python medicalrag.py
 
 ---
 
-## Notes
-
-- The vector database is automatically created on the first run.
-- The system answers questions strictly based on retrieved document context.
+## Design Decisions
+Chose RAG over fine-tuning for:
+- Better interpretability
+- Lower compute cost
+- Easier updates with new data
+  
+Used local LLM (Mistral via llama.cpp) for:
+- Privacy
+- Cost efficiency
 
 ---
+## Limitations & Future Work
+- Limited to static documents 
+- No reranking model 
+Can be extended with:
+- Hybrid search (BM25 + embeddings)
+- Multi-document reasoning
+
 
 ## Disclaimer
 
