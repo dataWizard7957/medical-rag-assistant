@@ -38,8 +38,9 @@ Mistral-7B LLM
         ↓
 Grounded Answer
 ```
+----
 
-### Key Components
+## Key Components
 
 - **Document Processing:** PyMuPDF for loading the PDF  
 - **Chunking:** Recursive text splitter with overlap  
@@ -49,7 +50,7 @@ Grounded Answer
   
 ---
 
-## Key Improvements & Results
+## Improvements & Results
 Improved retrieval relevance by ~25–30% through:
 - Better chunking strategy
 - Embedding selection
@@ -105,13 +106,13 @@ Used local LLM (Mistral via llama.cpp) for:
 - Cost efficiency
 
 ---
+
 ## Limitations & Future Work
 - Limited to static documents 
 - No reranking model 
 Can be extended with:
 - Hybrid search (BM25 + embeddings)
 - Multi-document reasoning
-
 
 ## Disclaimer
 
